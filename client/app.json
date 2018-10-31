@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",    
+    "pages/appoint/appoint",
+    "pages/myInfo/myInfo"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "App",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "表白墙"
+      },
+      {
+        "pagePath": "pages/appoint/appoint",
+        "text": "约一波"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "text": "我的"
+      }
+    ],
+    "position": "bottom",
+    "color": "#666"
+  }
+}

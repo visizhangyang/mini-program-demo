@@ -1,0 +1,16 @@
+/* pages/myInfo/myInfo.wxss */
+.top{
+  display: flex;
+  height: 200rpx;
+  align-items: center;
+  background-color: #5D98F6;
+  color: white
+}
+.top .avatar{
+  display: block;
+  overflow: hidden;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 0 30rpx
+}
