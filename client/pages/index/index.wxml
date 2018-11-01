@@ -1,6 +1,25 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
-   <text>index</text>
-   <open-data type='userNickName'></open-data>
+  <appoint wx:if='{{activeIndex==0}}'></appoint>
+  <say-love wx:if='{{activeIndex==1}}'></say-love>
+  <my-info wx:if='{{activeIndex==2}}'></my-info>
 </view>
-<button bindtap='get'>get</button>
+<view class='modal' wx:if='{{!infoGot}}'>
+  <view class='main'>
+    <view class='mainTop'>
+      <text>授权申请</text>
+    </view>
+    <view class='mainBody'>
+      <text>小程序需要获取您的信息，是否允许</text>
+    </view>
+    <view class='mainBottom'>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许</button>
+      <button>拒绝</button>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <text class="{{activeIndex==0?'active':''}}" bind:tap="changeIndex" data-index='0'>约一波</text>
+  <text class="{{activeIndex==1?'active':''}}" bind:tap="changeIndex" data-index='1'>表白墙</text>
+  <text class="{{activeIndex==2?'active':''}}" bind:tap="changeIndex" data-index='2'>我的</text>
+</view>

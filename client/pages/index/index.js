@@ -1,6 +1,8 @@
 
 Page({
     data: {
+      infoGot:false,
+      activeIndex:0
     },
     login:function(e){
       wx.getSetting({
@@ -20,8 +22,40 @@ Page({
     // 查看是否授权
     console.log(getApp().userInfo)
   },
-  get:function(){
-    console.log(getApp().userInfo)
+  getUserInfo:function(){
+    var that=this
+    wx.getUserInfo({
+      success:function(res){
+        that.setData({
+          infoGot:true
+        })
+      }
+    })
+  },
+  changeIndex:function(e){
+    var that=this;
+    var title=''
+    switch(parseInt(e.target.dataset['index'])){
+      case 0:
+      title='约一波';
+      break;
+      case 1:
+      title='表白墙';
+      break;
+      case 2:
+      title='我的';
+      break;
+    }
+    
+    wx.setNavigationBarTitle({
+      title:title,
+      success:function(){
+        that.setData({
+          activeIndex:e.target.dataset['index']
+        })
+      }
+    })
+    
   }
     // 用户登录示例
     

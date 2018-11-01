@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText":"表白墙"
+  "navigationBarTitleText":"约一波",
+  "usingComponents": {
+    "my-info": "/pages/myInfo/myInfo",
+    "appoint": "/pages/appoint/appoint",
+    "say-love":"/pages/sayLove/sayLove"
+  }
 }

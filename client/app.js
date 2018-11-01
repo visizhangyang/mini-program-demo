@@ -34,7 +34,7 @@ App({
         }
       })*/
       var that=this
-      wx.showModal({
+      /*wx.showModal({
         title: '授权申请',
         content: '小程序需要获取您的信息，是否允许',
         confirmText: "允许",
@@ -75,7 +75,7 @@ App({
             console.log('用户拒绝')
           }
         }
-      })
+      })*/
         
         console.log(options)
     },

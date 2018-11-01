@@ -1,129 +1,69 @@
 /**index.wxss**/
-page {
-    background: #F6F6F6;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+page{
+  height: 100%
 }
-
-.userinfo, .uploader, .tunnel {
-    margin-top: 40rpx;
-    height: 140rpx;
-    width: 100%;
-    background: #FFF;
-    border: 1px solid rgba(0, 0, 0, .1);
-    border-left: none;
-    border-right: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    transition: all 300ms ease;
+.container{
+  width: 100%;
+  height: 100%
 }
-
-.userinfo-avatar {
-    width: 100rpx;
-    height: 100rpx;
-    margin: 20rpx;
-    border-radius: 50%;
+.modal{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0,.3)
 }
-
-.userinfo-nickname {
-    font-size: 32rpx;
-    color: #007AFF;
-    background-color: white; 
+.modal .main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 450rpx 84rpx;
+  flex-grow: 1;
+  background: white;
+  height: 375rpx;
+  font-size: 32rpx
 }
+.main view{
+  margin: 0 48rpx;
 
-.userinfo-nickname::after {
-  border: none;
 }
-
-.uploader, .tunnel {
-    height: auto;
-    padding: 0 0 0 40rpx;
-    flex-direction: column;
-    align-items: flex-start;
-    box-sizing: border-box;
+.main .mainTop{
+  font-size: 42rpx;
 }
-
-.uploader-text, .tunnel-text {
-    width: 100%;
-    line-height: 52px;
-    font-size: 34rpx;
-    color: #007AFF;
+.main .mainBody{
+  color: rgb(117, 117, 117)
 }
-
-.uploader-container {
-    width: 100%;
-    height: 400rpx;
-    padding: 20rpx 20rpx 20rpx 0;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border-top: 1px solid rgba(0, 0, 0, .1);
+.main .mainBottom{
+  display: flex;
+  flex-direction: row-reverse;
 }
-
-.uploader-image {
-    width: 100%;
-    height: 360rpx;
+.main .mainBottom button{
+  display: inline;
+  background: transparent;
+  padding: 0;
+  margin: 0
 }
-
-.tunnel {
-    padding: 0 0 0 40rpx;
+.main .mainBottom button:nth-child(1){
+  color: rgb(60, 197, 31);
+  margin-left: 48rpx
 }
-
-.tunnel-text {
-    position: relative;
-    color: #222;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    border-top: 1px solid rgba(0, 0, 0, .1);
+.main .mainBottom button::after{
+  border: none
 }
-
-.tunnel-text:first-child {
-    border-top: none;
+.footer{
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  bottom: 0;
+  width: 100%;
+  height: 102rpx;
+  background-color: white
 }
-
-.tunnel-switch {
-    position: absolute;
-    right: 20rpx;
-    top: -2rpx;
-}
-
-.disable {
-    color: #888;
-}
-
-.service {
-    position: fixed;
-    right: 40rpx;
-    bottom: 40rpx;
-    width: 140rpx;
-    height: 140rpx;
-    border-radius: 50%;
-    background: linear-gradient(#007AFF, #0063ce);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    transition: all 300ms ease;
-}
-
-.service-button {
-    position: absolute;
-    top: 40rpx;
-}
-
-.service:active {
-    box-shadow: none;
-}
-
-.request-text {
-    padding: 20rpx 0;
-    font-size: 24rpx;
-    line-height: 36rpx;
-    word-break: break-all;
+.footer text.active{
+  color: rgb(60, 197, 31)
 }
