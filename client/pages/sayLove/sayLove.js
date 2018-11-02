@@ -28,6 +28,11 @@ Component({
       wx.navigateTo({
         url: '/pages/writeLove/writeLove'
       })
+    },
+    goDetail:function(){
+      wx.navigateTo({
+        url: '/pages/loveDetail/loveDetail'
+      })
     }
   },
   options: {

@@ -1,0 +1,34 @@
+<!-- client/pages/loveDeatil/loveDeatil.wxml -->
+<view class="loveDetail">
+    <view class='loveDetailTop'>
+        <image src='./noname.jpeg' />
+        <view class='sender'>
+            <view>
+                <text>11lang</text>
+                <text>jiangaiqi</text>
+            </view>
+            <view >
+                <text class="iconfont icon-nv"></text>
+                <text>2018-11-01 15:30</text>
+            </view>
+        </view>
+    </view>
+    <view class='loveDetailBody'>wozaigeiwozijibaiobai</view>
+    <view class='visitor'>访客</view>
+    <view class="visitorCon">
+        <image src="./noname.jpeg" wx:for='{{list}}' wx:key="index"/>
+    </view>
+    <view class="commentCon">
+        <view class="comment" wx:for='{{list}}' wx:key="index">
+            <image src="./noname.jpeg" />
+            <view class='commentDetail'>
+                <view >11lang</view>
+                <view >good</view>
+            </view>
+        </view>
+    </view>
+    <view class='send'>
+      <input placeholder='请输入评论内容'/>
+      <view>发送</view>
+    </view>
+</view>

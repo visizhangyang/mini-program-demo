@@ -1,0 +1,86 @@
+/* client/pages/loveDeatil/loveDeatil.wxss */
+.loveDetail{
+    color: rgb(144, 143, 141)
+}
+.loveDetailTop{
+    display: flex;
+    border-bottom: 2rpx solid rgb(237, 230, 237);
+    padding: 20rpx;
+}
+.loveDetailTop image{
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+}
+.loveDetailTop .sender{
+    flex-grow: 1;
+    margin-left: 20rpx;
+    font-size: 28rpx
+
+}
+.loveDetailTop .sender view{
+    display: flex;
+    justify-content: space-between
+}
+.loveDetailBody{
+    color: black;
+    border-bottom: 2rpx solid rgb(237, 230, 237);
+    padding: 20rpx 0;
+    padding-left: 20rpx
+}
+.visitor{
+    text-align: center;
+    font-size: 30rpx;
+    margin: 30rpx 0
+}
+.visitorCon{
+    border-bottom: 2rpx solid rgb(237, 230, 237);
+}
+.visitorCon image{ 
+    width: 50rpx;
+    height: 50rpx;
+    margin-left: 10rpx
+}
+.comment{
+    padding: 40rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 2rpx solid rgb(237, 230, 237);
+    border-top: 2rpx solid rgb(237, 230, 237);
+    margin-top: 20rpx;
+}
+.comment image{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin-right: 20rpx
+}
+.commentDetail{
+  flex-grow: 1;
+  font-size: 28rpx
+}
+.commentDetail view:nth-child(1){
+  color: rgb(57, 112, 177)
+}
+.send{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  border-bottom: 2px solid #e07883;
+  background-color: white
+}
+.send view{
+  height: 100%;
+  width: 190rpx;
+  color: white;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #e07883
+}
+.send input{
+  flex-grow: 1;
+  align-self: center;
+  padding-left: 20rpx
+}
