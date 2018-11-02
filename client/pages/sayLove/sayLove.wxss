@@ -5,7 +5,7 @@
     height: 100%;
 }
 .sayLove{
-    margin: 10rpx 20rpx;
+    margin: 20rpx 20rpx;
     background-color: white;
     border-radius: 8rpx;
     padding: 20rpx;
@@ -39,6 +39,22 @@
 .loveBottom{
     display: flex;
     justify-content: space-around;
-    font-size: 28rpx;
+    align-items: center;
+    font-size: 36rpx;
     padding-top: 20rpx;
+}
+.loveBottom .iconfont{
+    margin-right: 16rpx
+}
+.loveBottom .iconfont::before{
+    font-size: 32rpx
+}
+.write{
+    position: fixed;
+    bottom: 200rpx;
+    right: 40rpx;
+    color: #e07883
+}
+.write::before{
+    font-size: 80rpx
 }

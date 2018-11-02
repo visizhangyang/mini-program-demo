@@ -24,6 +24,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goWrite:function(){
+      wx.navigateTo({
+        url: '/pages/writeLove/writeLove'
+      })
+    }
+  },
+  options: {
+    addGlobalClass: true,
   }
 })

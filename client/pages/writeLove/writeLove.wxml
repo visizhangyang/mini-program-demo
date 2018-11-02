@@ -1,0 +1,20 @@
+<!--client/pages/writeLove/writeLove.wxml-->
+<view class='writeLove'>
+    <form catch:submit="submit">
+        <view class='toWho'>
+            <text>表白对象:</text>
+            <input placeholder="输入将要对谁表白" />
+        </view>
+        <view class='content'>
+            <view >表白内容:</view>
+            <textarea placeholder='例如，欧皓辰，我宣你'></textarea>
+        </view>
+        <view class='withoutName'>
+            <text >是否匿名</text>
+            <switch checked="{{false}}" />
+        </view>
+        <view class='submit'>
+            <button form-type='submit'>发布表白</button>
+        </view>
+    </form>
+</view>

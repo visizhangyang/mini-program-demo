@@ -57,13 +57,18 @@ page{
   position: fixed;
   display: flex;
   justify-content: space-around;
-  align-items: center;
   border-top: 1px solid #ccc;
   bottom: 0;
   width: 100%;
-  height: 102rpx;
   background-color: white
 }
-.footer text.active{
+.footer view{
+  text-align: center;
+  font-size: 28rpx
+}
+.footer view.active{
   color: rgb(60, 197, 31)
+}
+.footer .iconfont::before{
+  font-size: 50rpx
 }

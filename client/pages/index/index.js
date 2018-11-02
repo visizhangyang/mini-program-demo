@@ -35,7 +35,7 @@ Page({
   changeIndex:function(e){
     var that=this;
     var title=''
-    switch(parseInt(e.target.dataset['index'])){
+    switch(parseInt(e.currentTarget.dataset['index'])){
       case 0:
       title='约一波';
       break;
@@ -51,7 +51,7 @@ Page({
       title:title,
       success:function(){
         that.setData({
-          activeIndex:e.target.dataset['index']
+          activeIndex:e.currentTarget.dataset['index']
         })
       }
     })

@@ -19,7 +19,16 @@
   </view>
 </view>
 <view class='footer'>
-  <text class="{{activeIndex==0?'active':''}}" bind:tap="changeIndex" data-index='0'>约一波</text>
-  <text class="{{activeIndex==1?'active':''}}" bind:tap="changeIndex" data-index='1'>表白墙</text>
-  <text class="{{activeIndex==2?'active':''}}" bind:tap="changeIndex" data-index='2'>我的</text>
+  <view class="{{activeIndex==0?'active':''}}" bind:tap="changeIndex" data-index='0'>
+    <view class='iconfont icon-yuejian'></view>
+    <view >约一波</view>
+  </view>
+  <view class="{{activeIndex==1?'active':''}}" bind:tap="changeIndex" data-index='1'>
+    <view class='iconfont icon-tubiaozhizuomoban'></view>
+    <view >表白墙</view>
+  </view>
+  <view class="{{activeIndex==2?'active':''}}" bind:tap="changeIndex" data-index='2'>
+    <view class='iconfont icon-wode-copy'></view>
+    <view >我的</view>
+  </view>
 </view>

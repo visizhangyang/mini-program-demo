@@ -1,0 +1,65 @@
+/* client/pages/writeLove/writeLove.wxss */
+page{
+    height: 100%;
+    font-size: 28rpx
+}
+.writeLove .toWho{
+    display: flex;
+    background-color: #efefef;
+    margin: 40rpx 16rpx;
+    align-items: center;
+    height: 70rpx;
+}
+.writeLove .toWho text{
+    margin: 0 20rpx;
+    min-width: 120rpx;
+}
+.writeLove .toWho input{
+    flex-grow: 1
+}
+.writeLove .content{
+    background-color: #efefef;
+    margin: 40rpx 16rpx;
+    overflow: hidden;
+}
+.writeLove .content view{
+    margin: 20rpx;
+}
+.writeLove .content textarea{
+    width: 100%;
+    padding-left: 20rpx
+}
+.writeLove .withoutName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70rpx;
+    background-color: #efefef;
+    margin: 40rpx 16rpx;
+}
+.writeLove .withoutName text{
+    margin-left: 20rpx
+}
+.writeLove .withoutName switch{
+    margin-right: 20rpx
+}
+.wx-switch-input{width:84rpx !important;height:40rpx !important;}
+.wx-switch-input::before{width:82rpx !important;height: 40rpx !important;}
+.wx-switch-input::after{width: 36rpx !important;height: 36rpx !important;}
+.submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80rpx;
+    color: white;
+    background-color: rgb(224, 120, 131);
+    border-radius: 10rpx;
+    margin: 60rpx  40rpx
+}
+.submit button{
+    background: transparent;
+    color: white
+}
+.submit button::after{
+    border: none
+}
