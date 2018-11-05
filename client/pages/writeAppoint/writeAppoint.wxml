@@ -1,0 +1,35 @@
+<view class='writeAppoint'>
+    <form catch:submit="submit">
+        <view class='toWho'>
+            <text>邀约主题:</text>
+            <input placeholder="约吃、约玩、约自习" />
+        </view>
+        <view class='toWho'>
+            <text>意向伙伴:</text>
+            <input placeholder="希望哪些小伙伴加入" />
+        </view>
+        <view class='content'>
+            <view>详情:</view>
+            <textarea placeholder='例如，周日召唤师峡谷走起'></textarea>
+        </view>
+        <view class='withoutName'>
+            <text >日期</text>
+            <picker mode='date' bindchange="selectDate">
+                <view class="picker">{{date}}</view>
+            </picker>
+        </view>
+        <view class='withoutName'>
+            <text >时间</text>
+            <picker mode='time' bindchange="selectTime">
+                <view class="picker">{{time}}</view>
+            </picker>
+        </view>
+        <view class='toWho'>
+            <text>地点:</text>
+            <input placeholder="" />
+        </view>
+        <view class='submit'>
+            <button form-type='submit'>发布邀约</button>
+        </view>
+    </form>
+</view>

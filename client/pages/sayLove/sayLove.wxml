@@ -1,6 +1,6 @@
 <!-- pages/sayLove/sayLove.wxml -->
 <view class="loveCon">
-    <view class="sayLove" wx:for='{{loveLists}}' wx:key='{{index}}'>
+    <view class="sayLove" wx:for='{{loveLists}}' wx:key='{{index}}' bindtap='goDetail'>
         <view class='loveTop'>
             <image src='./noname.jpeg'/>
             <view class='sender'>

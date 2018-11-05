@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/loveDeatil/loveDeatil",
     "pages/index/index",
-    "pages/writeLove/writeLove"
-    
+    "pages/loveDetail/loveDetail",
+    "pages/writeLove/writeLove",
+    "pages/writeAppoint/writeAppoint"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

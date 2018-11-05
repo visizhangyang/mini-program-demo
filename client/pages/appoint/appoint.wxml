@@ -1,3 +1,19 @@
-<view>
-  <text>appoint</text>
+<view class="appointCon">
+  <view class="appoint" wx:for='{{list}}' wx:key='{{index}}'>
+        <view class='appointTop'>
+            <image src='./noname.jpeg'/>
+            <view class='sender'>
+                <view>
+                    <text>11lang</text>
+                    <text>jiangaiqi</text>
+                </view>
+                <view>约自习</view>
+            </view>
+        </view>
+        <view class='appointBody'>wozaigeiwozijibaiobai</view>
+        <view class="appointBottom">
+            将军路校区 2018-11-04 20:00
+        </view>
+    </view>
 </view>
+<view class="iconfont icon-bianji write" bind:tap="goWrite"></view>

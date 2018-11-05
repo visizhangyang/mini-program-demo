@@ -1,8 +1,8 @@
 /* pages/sayLove/sayLove.wxss */
 .loveCon{
     background-color: rgb(247, 219, 215);
-    overflow: hidden;
-    height: 100%;
+    border-top: 1px solid transparent;
+    padding-bottom: 130rpx
 }
 .sayLove{
     margin: 20rpx 20rpx;

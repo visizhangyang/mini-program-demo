@@ -1,6 +1,6 @@
 Component({
   data:{
-    list:['a','b','c']
+    list:['我的邀约','我的表白','我的信息']
   },
   created:function(){
     wx.setNavigationBarColor({

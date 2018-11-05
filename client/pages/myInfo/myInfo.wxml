@@ -3,7 +3,7 @@
   <open-data type='userAvatarUrl' class='avatar'></open-data>
   <open-data type='userNickName'></open-data>
 </view>
-<view class="weui-cells weui-cells_after-title" wx:for='{{list}}'>
+<view class="weui-cells weui-cells_after-title" wx:for='{{list}}' wx:key="{{index}}">
   <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
     <view class="weui-cell__hd">
       <image  style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>

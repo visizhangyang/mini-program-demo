@@ -24,6 +24,7 @@
             <view class='commentDetail'>
                 <view >11lang</view>
                 <view >good</view>
+                <view class="commentTime">2018-11-03</view>
             </view>
         </view>
     </view>

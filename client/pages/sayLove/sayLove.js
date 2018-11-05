@@ -11,7 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    loveLists:['','','']
+    loveLists:['','','','','','']
   },
   created:function(){
     wx.setNavigationBarColor({

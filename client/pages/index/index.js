@@ -26,8 +26,27 @@ Page({
     var that=this
     wx.getUserInfo({
       success:function(res){
-        that.setData({
-          infoGot:true
+        var userInfo=res.userInfo
+        wx.login({
+          success: function (res) {
+            if (res.code) {
+              wx.request({
+                url: 'https://wx.11lang.cn/api/test',
+                data: {
+                  code: res.code,
+                  userInfo: userInfo
+                },
+                method: 'post',
+                success: function (res) {
+                  if (res.data.third_Session != '') {
+                    that.setData({
+                      infoGot:true
+                    })
+                  }
+                }
+              })
+            }
+          }
         })
       }
     })
