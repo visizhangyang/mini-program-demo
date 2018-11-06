@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: ['', '', '', '']
+    list: ['', '', '', ''],
+    info:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      info:JSON.parse(options.info)
+    })
+    
   },
 
   /**

@@ -2,7 +2,9 @@
 .loveCon{
     background-color: rgb(247, 219, 215);
     border-top: 1px solid transparent;
-    padding-bottom: 130rpx
+    padding-bottom: 130rpx;
+    height: 100%;
+    box-sizing: border-box
 }
 .sayLove{
     margin: 20rpx 20rpx;

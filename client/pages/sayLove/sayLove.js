@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    loveList:{
+      type:Array,
+      value:[]
+    }
   },
 
   /**
@@ -29,9 +32,9 @@ Component({
         url: '/pages/writeLove/writeLove'
       })
     },
-    goDetail:function(){
+    goDetail:function(e){
       wx.navigateTo({
-        url: '/pages/loveDetail/loveDetail'
+        url: '/pages/loveDetail/loveDetail?info='+JSON.stringify(this.properties.loveList[e.currentTarget.dataset['index']])
       })
     }
   },

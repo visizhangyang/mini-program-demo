@@ -2,7 +2,8 @@
 Page({
     data: {
       infoGot:false,
-      activeIndex:0
+      activeIndex:0,
+      loveList:[]
     },
     login:function(e){
       wx.getSetting({
@@ -20,18 +21,27 @@ Page({
     },
   onLoad: function () {
     // 查看是否授权
-    console.log(getApp().userInfo)
+    var that=this;
+    wx.request({
+      url: 'https://wx.11lang.cn/api/getLove',
+      success: function (res) {
+        that.setData({
+          loveList:res.data
+        })
+      }
+    })
   },
   getUserInfo:function(){
     var that=this
     wx.getUserInfo({
       success:function(res){
         var userInfo=res.userInfo
+        getApp().userInfo=userInfo;
         wx.login({
           success: function (res) {
             if (res.code) {
               wx.request({
-                url: 'https://wx.11lang.cn/api/test',
+                url: 'https://wx.11lang.cn/api/login',
                 data: {
                   code: res.code,
                   userInfo: userInfo
@@ -65,7 +75,6 @@ Page({
       title='我的';
       break;
     }
-    
     wx.setNavigationBarTitle({
       title:title,
       success:function(){

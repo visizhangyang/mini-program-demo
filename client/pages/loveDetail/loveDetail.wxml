@@ -4,16 +4,16 @@
         <image src='./noname.jpeg' />
         <view class='sender'>
             <view>
-                <text>11lang</text>
-                <text>jiangaiqi</text>
+                <text>{{info.nickName}}</text>
+                <text>{{'向'+info.toWho+'表白'}}</text>
             </view>
             <view >
-                <text class="iconfont icon-nv"></text>
+                <text class="{{info.gender==1?'iconfont icon-ttpodicon':'iconfont icon-nv'}}"></text>
                 <text>2018-11-01 15:30</text>
             </view>
         </view>
     </view>
-    <view class='loveDetailBody'>wozaigeiwozijibaiobai</view>
+    <view class='loveDetailBody'>{{info.content}}</view>
     <view class='visitor'>访客</view>
     <view class="visitorCon">
         <image src="./noname.jpeg" wx:for='{{list}}' wx:key="index"/>

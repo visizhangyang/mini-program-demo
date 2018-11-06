@@ -1,29 +1,29 @@
 <!-- pages/sayLove/sayLove.wxml -->
 <view class="loveCon">
-    <view class="sayLove" wx:for='{{loveLists}}' wx:key='{{index}}' bindtap='goDetail'>
+    <view class="sayLove" wx:for='{{loveList}}' wx:key='{{index}}' bindtap='goDetail' data-index='{{index}}'>
         <view class='loveTop'>
-            <image src='./noname.jpeg'/>
+            <image src='{{item.avatarUrl}}'/>
             <view class='sender'>
                 <view>
-                    <text>11lang</text>
-                    <text>jiangaiqi</text>
+                    <text>{{item.nickName}}</text>
+                    <text>{{'向'+item.toWho+'表白'}}</text>
                 </view>
-                <view class="iconfont icon-nv"></view>
+                <view class="{{item.gender==1?'iconfont icon-ttpodicon':'iconfont icon-nv'}}"></view>
             </view>
         </view>
-        <view class='loveBody'>wozaigeiwozijibaiobai</view>
+        <view class='loveBody'>{{item.content}}</view>
         <view class='loveBottom'>
             <view>
                 <text class="iconfont icon-kanguo1"></text>
-                <text>2</text>
+                <text>{{item.watchCount}}</text>
             </view>
             <view>
                 <text class="iconfont icon-pinglun"></text>
-                <text>3</text>
+                <text>{{item.commentCount}}</text>
             </view>
             <view>
                 <text class="iconfont icon-ic-thumb-up-px"></text>
-                <text>5</text>
+                <text>{{item.thumpCount}}</text>
             </view>
         </view>
     </view>

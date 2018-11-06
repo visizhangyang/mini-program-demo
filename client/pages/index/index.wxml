@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <view class="container">
   <appoint wx:if='{{activeIndex==0}}'></appoint>
-  <say-love wx:if='{{activeIndex==1}}'></say-love>
+  <say-love wx:if='{{activeIndex==1}}' loveList='{{loveList}}'></say-love>
   <my-info wx:if='{{activeIndex==2}}'></my-info>
 </view>
 <view class='modal' wx:if='{{!infoGot}}'>
