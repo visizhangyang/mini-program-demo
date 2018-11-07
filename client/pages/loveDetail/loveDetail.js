@@ -5,66 +5,88 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: ['', '', '', ''],
-    info:{}
+    visitorList: [],
+    info: {},
+    commentList:[],
+    comment:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    var info = JSON.parse(options.info)
     this.setData({
-      info:JSON.parse(options.info)
+      info: info
     })
-    
+    var data = {};
+    data.id = info.id;
+    data.nickName = getApp().userInfo.nickName;
+    data.avatarUrl = getApp().userInfo.avatarUrl;
+    wx.request({
+      url: 'https://wx.11lang.cn/api/addLoveVisitor',
+      method: "post",
+      data: data,
+      success: function (res) {
+        wx.request({
+          url: 'https://wx.11lang.cn/api/getLoveVisitor',
+          method:"post",
+          data:{
+            id:info.id
+          },
+          success: function (res) {
+            that.setData({
+              visitorList:res.data
+            })
+          }
+        })
+      }
+    })
+    wx.request({
+      url: 'https://wx.11lang.cn/api/getLoveComment',
+      method:"post",
+      data:{
+        id:info.id
+      },
+      success: function (res) {
+        that.setData({
+          commentList:res.data.reverse()
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  comment:function(){
+    var info=this.data.info;
+    var that=this;
+    var data={
+      id:info.id,
+      nickName:getApp().userInfo.nickName,
+      avatarUrl:getApp().userInfo.avatarUrl,
+      content:that.data.comment,
+      commentTime:getApp().getTime()
+    }
+    wx.request({
+      url: 'https://wx.11lang.cn/api/addLoveComment',
+      method:"post",
+      data:data,
+      success:function(){
+        that.setData({
+          comment:'',
+          commentList:[data,...that.data.commentList]
+        })
+        wx.showToast({
+          title: '评论成功',
+          icon: 'success',
+          duration: 1000
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  input:function(e){
+    this.setData({
+      comment:e.detail.value
+    })
   }
 })

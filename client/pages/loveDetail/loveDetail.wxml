@@ -1,7 +1,7 @@
 <!-- client/pages/loveDeatil/loveDeatil.wxml -->
 <view class="loveDetail">
     <view class='loveDetailTop'>
-        <image src='./noname.jpeg' />
+        <image src='{{info.avatarUrl}}' />
         <view class='sender'>
             <view>
                 <text>{{info.nickName}}</text>
@@ -16,20 +16,20 @@
     <view class='loveDetailBody'>{{info.content}}</view>
     <view class='visitor'>访客</view>
     <view class="visitorCon">
-        <image src="./noname.jpeg" wx:for='{{list}}' wx:key="index"/>
+        <image src="{{item.avatarUrl}}" wx:for='{{visitorList}}' wx:key="index"/>
     </view>
     <view class="commentCon">
-        <view class="comment" wx:for='{{list}}' wx:key="index">
-            <image src="./noname.jpeg" />
+        <view class="comment" wx:for='{{commentList}}' wx:key="index">
+            <image src="{{item.avatarUrl}}" />
             <view class='commentDetail'>
-                <view >11lang</view>
-                <view >good</view>
-                <view class="commentTime">2018-11-03</view>
+                <view >{{item.nickName}}</view>
+                <view >{{item.content}}</view>
+                <view class="commentTime">{{item.commentTime}}</view>
             </view>
         </view>
     </view>
     <view class='send'>
-      <input placeholder='请输入评论内容'/>
-      <view>发送</view>
+      <input placeholder='请输入评论内容' value='{{comment}}' bindinput='input'/>
+      <view bind:tap="comment">发送</view>
     </view>
 </view>

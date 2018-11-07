@@ -82,5 +82,19 @@ App({
     onError:function(){
       console.log('error')
     },
-    userInfo:{}
+    userInfo:{},
+    openid:"",
+    getTime:function(){
+      var date=new Date()
+      var year=date.getFullYear();
+      var month=date.getMonth()+1;
+      month=month>=10?month:('0'+month.toString())
+      var day=date.getDate();
+      day=day>=10?day:('0'+day.toString())
+      var hour=date.getHours();
+      hour=hour>=10?hour:('0'+hour.toString())
+      var min=date.getMinutes();
+      min=min>=10?min:('0'+min.toString())
+      return year+'-'+month+'-'+day+' '+hour+':'+min
+    }
 })

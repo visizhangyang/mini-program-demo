@@ -22,6 +22,7 @@ Component({
       frontColor:'#ffffff',
       animation:{}
     })
+    console.log(getApp().getTime())
   },
   /**
    * 组件的方法列表
@@ -36,6 +37,9 @@ Component({
       wx.navigateTo({
         url: '/pages/loveDetail/loveDetail?info='+JSON.stringify(this.properties.loveList[e.currentTarget.dataset['index']])
       })
+    },
+    upper:function(){
+      console.log('1')
     }
   },
   options: {

@@ -31,6 +31,22 @@ Page({
       }
     })
   },
+  onPullDownRefresh:function(){
+    var that=this;
+    if(this.data.activeIndex==1){
+      wx.request({
+        url: 'https://wx.11lang.cn/api/getLove',
+        success: function (res) {
+          that.setData({
+            loveList:res.data
+          })
+          wx.stopPullDownRefresh()
+        }
+      })
+    }else{
+      
+    }
+  },
   getUserInfo:function(){
     var that=this
     wx.getUserInfo({
@@ -49,6 +65,7 @@ Page({
                 method: 'post',
                 success: function (res) {
                   if (res.data.third_Session != '') {
+                    getApp().openid=res.data.third_Session.split('_logined_')[1]
                     that.setData({
                       infoGot:true
                     })

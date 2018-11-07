@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText":"约一波",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "my-info": "/pages/myInfo/myInfo",
     "appoint": "/pages/appoint/appoint",
