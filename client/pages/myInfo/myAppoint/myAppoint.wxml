@@ -1,5 +1,5 @@
 <view class="appointCon">
-  <view class="appoint" wx:for='{{appointList}}' wx:key='{{index}}' bind:tap="show" data-index='{{index}}'>
+  <view class="appoint" wx:for='{{appointList}}' wx:key='{{index}}' data-index='{{index}}'>
         <view class='appointTop'>
             <image src='{{item.avatarUrl}}'/>
             <view class='sender'>
@@ -13,19 +13,11 @@
         <view class='appointBody'>{{item.detail}}</view>
         <view class="appointBottom">
             <view >
-            {{'地点: '+item.appointLocation}}
+            {{item.appointLocation}}
             </view>
             <view >
-            {{'时间: '+item.appointTime}}
+            {{item.appointTime}}
             </view>
         </view>
-    </view>
-</view>
-<view class="iconfont icon-bianji write" bind:tap="goWrite"></view>
-<view class="contact" wx:if="{{showContact}}" bind:tap="hide" id="con">
-    <view class="contactMain">
-        <view>留言</view>
-        <textarea placeholder="留下你的信息联系发布者" bindinput='input'></textarea>
-        <view class="join" bind:tap="join">我想加入</view>
     </view>
 </view>

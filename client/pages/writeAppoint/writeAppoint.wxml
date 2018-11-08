@@ -2,31 +2,31 @@
     <form catch:submit="submit">
         <view class='toWho'>
             <text>邀约主题:</text>
-            <input placeholder="约吃、约玩、约自习" />
+            <input placeholder="约吃、约玩、约自习" name='theme'/>
         </view>
         <view class='toWho'>
             <text>意向伙伴:</text>
-            <input placeholder="希望哪些小伙伴加入" />
+            <input placeholder="希望哪些小伙伴加入" name='want'/>
         </view>
         <view class='content'>
             <view>详情:</view>
-            <textarea placeholder='例如，周日召唤师峡谷走起'></textarea>
+            <textarea placeholder='例如，周日召唤师峡谷走起' name='detail'></textarea>
         </view>
         <view class='withoutName'>
             <text >日期</text>
-            <picker mode='date' bindchange="selectDate">
+            <picker mode='date' bindchange="selectDate" name='date'>
                 <view class="picker">{{date}}</view>
             </picker>
         </view>
         <view class='withoutName'>
             <text >时间</text>
-            <picker mode='time' bindchange="selectTime">
+            <picker mode='time' bindchange="selectTime" name='time'>
                 <view class="picker">{{time}}</view>
             </picker>
         </view>
         <view class='toWho'>
             <text>地点:</text>
-            <input placeholder="" />
+            <input placeholder="" name='location'/>
         </view>
         <view class='submit'>
             <button form-type='submit'>发布邀约</button>

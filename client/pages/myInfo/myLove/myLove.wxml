@@ -1,6 +1,5 @@
-<!-- pages/sayLove/sayLove.wxml -->
 <view class="loveCon">
-    <view class="sayLove" wx:for='{{loveList}}' wx:key='{{index}}' bindtap='goDetail' data-index='{{index}}'>
+    <view class="sayLove" wx:for='{{loveList}}' wx:key='{{index}}'  data-index='{{index}}'>
         <view class='loveTop'>
             <image src='{{item.avatarUrl}}'/>
             <view class='sender'>
@@ -21,11 +20,10 @@
                 <text class="iconfont icon-pinglun"></text>
                 <text>{{item.commentCount}}</text>
             </view>
-            <view data-index='{{index}}' catchtap='thump'>
+            <view data-index='{{index}}'>
                 <text class="iconfont icon-ic-thumb-up-px"></text>
                 <text>{{item.thumpCount}}</text>
             </view>
         </view>
     </view>
 </view>
-<view class="iconfont icon-bianji write" bind:tap="goWrite"></view>

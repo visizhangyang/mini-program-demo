@@ -1,11 +1,12 @@
+/* client/pages/myInfo/myAppoint/myAppoint.wxss */
 page{
-    width: 100%
+    width: 100%;
+    height: 100%;
 }
 .appointCon{
     background-color: rgb(144, 221, 145);
     border-top: 1rpx solid transparent;
     min-height: 100%;
-    padding-bottom: 130rpx;
     box-sizing: border-box
 }
 .appoint{
@@ -44,44 +45,7 @@ page{
     padding-bottom: 20rpx;
 }
 .appointBottom view{
-    display: flex;
-    flex-direction: row-reverse;
     margin-top: 10rpx;
     font-size: 28rpx;
+    direction: rtl;
 }
-.write{
-    position: fixed;
-    bottom: 200rpx;
-    right: 40rpx;
-    color: rgb(60, 197, 31);
-}
-.write::before{
-    font-size: 80rpx
-}
-.contact{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0,.3)
-  }
-  .contactMain{
-    margin: 400rpx 84rpx;
-    background: white;
-    font-size: 40rpx;
-    padding: 40rpx;
-  }
-  .contactMain textarea{
-    font-size: 32rpx;
-    height: 140px;
-  }
-  .contactMain .join{
-      text-align: center;
-      color: white;
-      background-color: rgb(60, 197, 31);
-      border-radius: 6rpx;
-      height: 80rpx;
-      line-height: 80rpx;
-  }

@@ -12,6 +12,14 @@ Page({
     var userInfo = getApp().userInfo;
     var detail = e.detail.value;
     var data = {};
+    if(detail.toWho==''||detail.content==''){
+      wx.showToast({
+        title:"信息不完整",
+        icon:"none",
+        duration:1000
+      })
+      return 
+    }
     data.toWho = detail.toWho;
     data.content = detail.content;
     data.watchCount = data.commentCount = data.thumpCount = 0;
@@ -19,6 +27,7 @@ Page({
     data.gender = userInfo.gender;
     data.avatarUrl = userInfo.avatarUrl;
     data.openid = getApp().openid;
+    data.writeTime=getApp().getTime();
     if (e.detail.value.withoutName) {
       data.nickName = '匿名'
       data.avatarUrl = './noname.jpeg'
@@ -28,7 +37,10 @@ Page({
       data: data,
       method: 'post',
       success: function (res) {
-        wx.navigateBack()
+        wx.showToast({
+          title:"发布成功",
+          duration:2000
+        })
       }
     })
   }

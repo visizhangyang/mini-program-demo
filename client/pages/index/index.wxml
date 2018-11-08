@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <view class="container">
-  <appoint wx:if='{{activeIndex==0}}'></appoint>
-  <say-love wx:if='{{activeIndex==1}}' loveList='{{loveList}}'></say-love>
+  <appoint wx:if='{{activeIndex==0}}' appointList='{{appointList}}'></appoint>
+  <say-love wx:if='{{activeIndex==1}}' loveList='{{loveList}}' bindthump='thump'></say-love>
   <my-info wx:if='{{activeIndex==2}}'></my-info>
 </view>
 <view class='modal' wx:if='{{!infoGot}}'>
@@ -21,7 +21,7 @@
 <view class='footer'>
   <view class="{{activeIndex==0?'active':''}}" bind:tap="changeIndex" data-index='0'>
     <view class='iconfont icon-yuejian'></view>
-    <view >约一波</view>
+    <view >邀约</view>
   </view>
   <view class="{{activeIndex==1?'active':''}}" bind:tap="changeIndex" data-index='1'>
     <view class='iconfont icon-tubiaozhizuomoban'></view>

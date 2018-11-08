@@ -1,0 +1,26 @@
+.mes{
+    padding: 40rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 2rpx solid rgb(237, 230, 237);
+    border-top: 2rpx solid rgb(237, 230, 237);
+    margin-top: 20rpx;
+}
+.mes image{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin-right: 20rpx
+}
+.mesDetail{
+  flex-grow: 1;
+  font-size: 28rpx
+}
+.mesDetail view:nth-child(1){
+  color: rgb(57, 112, 177)
+}
+.mesTime{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24rpx
+}

@@ -1,0 +1,11 @@
+<!-- client/pages/myInfo/myMes/myMes.wxml -->
+<view class="mesCon">
+    <view class="mes" wx:for='{{mesList}}' wx:key="index">
+        <image src="{{item.avatarUrl}}" />
+        <view class='mesDetail'>
+            <view>{{item.nickName}}</view>
+            <view>{{item.content}}</view>
+            <view class="mesTime">{{item.writeTime}}</view>
+        </view>
+    </view>
+</view>

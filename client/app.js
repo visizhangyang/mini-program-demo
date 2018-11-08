@@ -96,5 +96,6 @@ App({
       var min=date.getMinutes();
       min=min>=10?min:('0'+min.toString())
       return year+'-'+month+'-'+day+' '+hour+':'+min
-    }
+    },
+    thumpList:[]
 })

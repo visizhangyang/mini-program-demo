@@ -1,6 +1,15 @@
 Component({
   data:{
-    list:['我的邀约','我的表白','我的信息']
+    list:[{
+      des:"我的邀约",
+      url:'/pages/myInfo/myAppoint/myAppoint'
+    },{
+      des:"我的表白",
+      url:'/pages/myInfo/myLove/myLove'
+    },{
+      des:"我的信息",
+      url:'/pages/myInfo/myMes/myMes'
+    }]
   },
   created:function(){
     wx.setNavigationBarColor({
@@ -9,4 +18,11 @@ Component({
       animation:{}
     })
   },
+  methods:{
+    goMes:function(e){
+      wx.navigateTo({
+        url: e.currentTarget.dataset['url']
+      })
+    }
+  }
 })

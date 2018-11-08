@@ -3,7 +3,8 @@ Page({
     data: {
       infoGot:false,
       activeIndex:0,
-      loveList:[]
+      loveList:[],
+      appointList:[]
     },
     login:function(e){
       wx.getSetting({
@@ -26,25 +27,44 @@ Page({
       url: 'https://wx.11lang.cn/api/getLove',
       success: function (res) {
         that.setData({
-          loveList:res.data
+          loveList:res.data.reverse()
+        })
+      }
+    })
+    wx.request({
+      url: 'https://wx.11lang.cn/api/getAppoint',
+      success: function (res) {
+        that.setData({
+          appointList:res.data.reverse()
         })
       }
     })
   },
   onPullDownRefresh:function(){
     var that=this;
-    if(this.data.activeIndex==1){
+    if(this.data.activeIndex==0){
+      wx.request({
+        url: 'https://wx.11lang.cn/api/getAppoint',
+        success: function (res) {
+          that.setData({
+            appointList:res.data.reverse()
+          })
+          wx.stopPullDownRefresh()
+        }
+      })
+    }
+    else if(this.data.activeIndex==1){
       wx.request({
         url: 'https://wx.11lang.cn/api/getLove',
         success: function (res) {
           that.setData({
-            loveList:res.data
+            loveList:res.data.reverse()
           })
           wx.stopPullDownRefresh()
         }
       })
     }else{
-      
+
     }
   },
   getUserInfo:function(){
@@ -83,7 +103,7 @@ Page({
     var title=''
     switch(parseInt(e.currentTarget.dataset['index'])){
       case 0:
-      title='约一波';
+      title='邀约';
       break;
       case 1:
       title='表白墙';
@@ -101,7 +121,15 @@ Page({
       }
     })
     
+  },
+  thump:function(e){
+    var newList=this.data.loveList.map(function(love,index){
+      return index==e.detail.index?Object.assign({},love,{thumpCount:e.detail.count}):love
+    })
+    this.setData({
+      loveList:newList
+    })
   }
-    // 用户登录示例
+  
     
 })

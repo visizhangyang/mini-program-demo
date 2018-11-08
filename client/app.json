@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/loveDetail/loveDetail",
     "pages/writeLove/writeLove",
-    "pages/writeAppoint/writeAppoint"
+    "pages/writeAppoint/writeAppoint",
+    "pages/myInfo/myMes/myMes",
+    "pages/myInfo/myLove/myLove",
+    "pages/myInfo/myAppoint/myAppoint"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

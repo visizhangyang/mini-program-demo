@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText":"约一波",
+  "navigationBarTitleText":"邀约",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "my-info": "/pages/myInfo/myInfo",
