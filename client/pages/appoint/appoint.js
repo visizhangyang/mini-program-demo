@@ -47,6 +47,14 @@ Component({
       })
     },
     join:function(){
+      if(this.data.content.trim()==''){
+        wx.showToast({
+          title:"信息不完整",
+          duration:1000,
+          icon:"none"
+        })
+        return 
+      }
       var data={};
       var that=this;
       var userInfo=getApp().userInfo
