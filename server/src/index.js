@@ -169,7 +169,7 @@ app.post('/api/writeAppoint', function (req, res) {
 app.post('/api/getMes', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
-        var sql = 'select * from mes where toWho=?'
+        var sql = 'select * from mes where toWho in (?,"all")'
         connection.query(sql, [fields.id], function (err, result) {
             if (err) {
                 console.log(err)
