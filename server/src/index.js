@@ -47,7 +47,7 @@ app.post('/api/login', function (req, res) {
 })
 
 app.get('/api/getLove', function (req, res) {
-    var sql = 'select * from love'
+    var sql = 'select * from love where publish=1'
     connection.query(sql, function (err, result) {
         if (err) {
             console.log(err)
@@ -55,7 +55,7 @@ app.get('/api/getLove', function (req, res) {
             res.json(result)
         }
     })
-})
+})//获取表白信息
 app.post('/api/writeLove', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -70,7 +70,7 @@ app.post('/api/writeLove', function (req, res) {
             }
         })
     });
-})
+})//写表白信息
 app.post('/api/addLoveVisitor', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -84,7 +84,7 @@ app.post('/api/addLoveVisitor', function (req, res) {
             }
         })
     });
-})
+})//添加访客
 app.post('/api/getLoveVisitor', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -98,7 +98,7 @@ app.post('/api/getLoveVisitor', function (req, res) {
         })
     });
 
-})
+})//获取访客
 app.post('/api/addLoveComment', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -112,7 +112,7 @@ app.post('/api/addLoveComment', function (req, res) {
             }
         })
     });
-})
+})//添加评论
 app.post('/api/getLoveComment', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -126,7 +126,7 @@ app.post('/api/getLoveComment', function (req, res) {
         })
     });
 
-})
+})//获取评论
 app.post('/api/addThumpCount',function(req,res){
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -139,10 +139,10 @@ app.post('/api/addThumpCount',function(req,res){
             }
         })
     });
-})
+})//点赞
 
 app.get('/api/getAppoint', function (req, res) {
-    var sql = 'select * from appoint'
+    var sql = 'select * from appoint where publish=1'
     connection.query(sql, function (err, result) {
         if (err) {
             console.log(err)
@@ -150,7 +150,7 @@ app.get('/api/getAppoint', function (req, res) {
             res.json(result)
         }
     })
-})
+})//获取邀约
 app.post('/api/writeAppoint', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -165,7 +165,7 @@ app.post('/api/writeAppoint', function (req, res) {
             }
         })
     });
-})
+})//写邀约
 app.post('/api/getMes', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -178,7 +178,7 @@ app.post('/api/getMes', function (req, res) {
             }
         })
     });
-})
+})//获取信息
 app.post('/api/addMes', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -192,7 +192,7 @@ app.post('/api/addMes', function (req, res) {
             }
         })
     });
-})
+})//添加信息
 app.post('/api/getMyLove', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -205,7 +205,7 @@ app.post('/api/getMyLove', function (req, res) {
             }
         })
     });
-})
+})//获取个人表白
 app.post('/api/getMyAppoint', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -218,5 +218,5 @@ app.post('/api/getMyAppoint', function (req, res) {
             }
         })
     });
-})
+})//获取个人邀约
 app.listen(4000)
