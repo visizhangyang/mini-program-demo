@@ -1,0 +1,5 @@
+const login=require('./login')
+const love=require('./love')
+const appoint=require('./appoint')
+const info=require('./info')
+module.exports=[].concat(login,love,appoint,info)
